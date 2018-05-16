@@ -1,0 +1,53 @@
+--- 
+title: "Building a website using blogdown in R"
+author: "Alistair Bailey"
+date: "`r format(Sys.Date(),format='%B %d %Y')`"
+output: 
+  bookdown::gitbook: default
+  bookdown::epub_book: default
+  bookdown::pdf_book:
+    includes:
+      in_header: preamble.tex
+    keep_tex: yes
+    citation_package: natbib
+    latex_engine: xelatex
+documentclass: book
+fontsize: 12pt
+linestretch: 1.5
+toc-depth: 1
+secnumdepth: 1
+lof: True
+lot: True
+site: bookdown::bookdown_site
+bibliography: [refs.bib,cats.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+#geometry: "left=4cm, right=3cm, top=2.5cm, bottom=2.5cm"
+description: "Instructions for building a website using R"
+---
+
+```{r include=FALSE}
+library(tidyverse)
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown', 'blogdown'
+), 'packages.bib')
+
+options(knitr.graphics.auto_pdf = TRUE)
+
+```
+
+# Summary {-}
+
+These are my instructions for how to build a website using R. The inspiration came from
+a series of tweets by [Dan Qunitana](https://twitter.com/dsquintana) about how
+to build an academic website using the [blogdown package](https://bookdown.org/yihui/blogdown/) [@R-bookdown].
+
+Following these instructions you can build a website for Bibi the Cat, using 
+the [Hugo academic theme](https://themes.gohugo.io/academic/) but you can of 
+course make a website for anything you like and use any of the many themes 
+available.
+
+These instructions assume you have R [@R-base] and [Rstudio](https://www.rstudio.com/) installed and are reasonably comfortable using these tools.
+
+For much more detail check out the fantastic [blogdown book](https://bookdown.org/yihui/blogdown/).

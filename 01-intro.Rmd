@@ -1,0 +1,28 @@
+# Getting started
+
+## Installation
+
+First you'll need to install the blogdown package:
+
+```{r blogdown-install, eval=FALSE}
+install.packages("blogdown")
+```
+
+Then use blogdown to install the static site generator Hugo:
+
+```{r hugo-install, eval=FALSE}
+blogdown::install_hugo()
+```
+
+## Installing JabRef
+
+If you are going to link academic publications on your website you will 
+probably find it useful to have [JabRef](http://www.jabref.org/) installed to 
+create the necessary files you need.
+
+JabRef is an open source bibliography reference manager.
+
+This is not the only way to do things, but it's what I'm familiar with and is 
+free.
+
+See [the publications section][Creating publication files] for the full details.
