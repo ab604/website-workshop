@@ -103,7 +103,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.1" data-path="getting-started.html"><a href="getting-started.html#installation"><i class="fa fa-check"></i><b>1.1</b> Installation</a></li>
 <li class="chapter" data-level="1.2" data-path="getting-started.html"><a href="getting-started.html#installing-jabref"><i class="fa fa-check"></i><b>1.2</b> Installing JabRef</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="creating-and-deploying-an-initial-website.html"><a href="creating-and-deploying-an-initial-website.html"><i class="fa fa-check"></i><b>2</b> Creating and deploying an initial website</a></li>
+<li class="chapter" data-level="2" data-path="creating-and-deploying-an-initial-website.html"><a href="creating-and-deploying-an-initial-website.html"><i class="fa fa-check"></i><b>2</b> Creating and deploying an initial website</a><ul>
+<li class="chapter" data-level="2.1" data-path="creating-and-deploying-an-initial-website.html"><a href="creating-and-deploying-an-initial-website.html#creating-a-website-in-r"><i class="fa fa-check"></i><b>2.1</b> Creating a website in R</a></li>
+<li class="chapter" data-level="2.2" data-path="creating-and-deploying-an-initial-website.html"><a href="creating-and-deploying-an-initial-website.html#deployment"><i class="fa fa-check"></i><b>2.2</b> Deployment</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html"><i class="fa fa-check"></i><b>3</b> Adding content to the site</a></li>
 <li class="chapter" data-level="4" data-path="creating-publication-files.html"><a href="creating-publication-files.html"><i class="fa fa-check"></i><b>4</b> Creating publication files</a></li>
 <li class="chapter" data-level="5" data-path="automating-deployment-with-github.html"><a href="automating-deployment-with-github.html"><i class="fa fa-check"></i><b>5</b> Automating deployment with GitHub</a></li>
@@ -126,27 +129,54 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="creating-and-deploying-an-initial-website" class="section level1">
 <h1><span class="header-section-number">2</span> Creating and deploying an initial website</h1>
+<div id="creating-a-website-in-r" class="section level2">
+<h2><span class="header-section-number">2.1</span> Creating a website in R</h2>
 <p>We’re going to create a website for Bibi the Cat aka The Tiny Tiger.</p>
 <p>Here she is:</p>
 
 <div class="figure"><span id="fig:bibi-cat"></span>
-<img src="img/portrait.jpg" alt="Bibi the Cat"  />
+<img src="img/portrait.jpg" alt="Bibi the Cat" width="50%" />
 <p class="caption">
 Figure 2.1: Bibi the Cat
 </p>
 </div>
-<p>Go to File &gt; New Project and when the pop-up appears choose a new directory and then scroll down and choose <strong>Website using blogdown</strong>.</p>
-<p><img src="img/new_website.PNG" width="325" /></p>
+<p>Go to <code>File &gt; New Project &gt; New directory</code> and then scroll down and choose <strong>Website using blogdown</strong>.</p>
+<p><img src="img/new_website.PNG" width="120%" /></p>
 <p>This will then take you to the another screen where you can choose the directory for the website and we choose the theme.</p>
-<p>Given Bibi’s interests in <a href="">rheology</a> we’ll be using the hugo-academic theme, this is selected by entering <code>gchusen/hugo-academic</code> in the box as shown in Figure <a href="creating-and-deploying-an-initial-website.html#fig:choose-theme">2.2</a></p>
+<p>Given Bibi’s interests in <a href="https://www.drgoulu.com/wp-content/uploads/2017/09/Rheology-of-cats.pdf">rheology</a> we’ll be using the hugo-academic theme, this is selected by entering <code>gchusen/hugo-academic</code> in the box as shown in Figure <a href="creating-and-deploying-an-initial-website.html#fig:choose-theme">2.2</a></p>
 
 <div class="figure"><span id="fig:choose-theme"></span>
-<img src="img/create-website.PNG" alt="Create a new directory with a suitable name with no spaces and choose a theme, here we’re using gchusen/hugo-academic." width="276" />
+<img src="img/create-website.PNG" alt="Create a new directory with a suitable name with no spaces and choose a theme, here we’re using gchusen/hugo-academic." width="120%" />
 <p class="caption">
 Figure 2.2: Create a new directory with a suitable name with no spaces and choose a theme, here we’re using <code>gchusen/hugo-academic</code>.
 </p>
 </div>
+<p>Then <code>Create Project</code> and it should download the necessary files, change the working directory to the one created and you should see something like this:</p>
+<div class="figure"><span id="fig:rstudio-web"></span>
+<img src="img/initial-site.PNG" alt="(ref:rstudio-web)" width="120%" />
+<p class="caption">
+Figure 2.3: (ref:rstudio-web)
+</p>
+</div>
+<p>There are a bunch of folders and files, and the script editor pane is open with the <code>confog.toml</code> file open for editing.</p>
+<p>As example files are provided we can build a website immediately using:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">blogdown<span class="op">::</span><span class="kw">serve_site</span>()</code></pre></div>
+<p>And we should see the example site open in the <code>Viewer</code> pane.</p>
+</div>
+<div id="deployment" class="section level2">
+<h2><span class="header-section-number">2.2</span> Deployment</h2>
+<p>The simplest way to delpoy our website is to use <a href="https://www.netlify.com/">netlify</a>.</p>
+<p>Create and account or connect via another account such as <a href="https://github.com/">GitHub</a> and then from the <code>Sites</code> tab that should appear if you click on your name, drag and drop the public folder from the directory into the box like so:</p>
+<p><img src="img/netlify-drag-public.PNG" width="120%" /></p>
+<p>Assuming that goes ok, you’ll then see a randomly generated name for your new site. Click on <code>Site settings</code> to change the name to whatever you wish.</p>
+<p><img src="img/netlify-random-sitename.PNG" width="120%" /></p>
+<p>You should see the option to change the name like so. Click and follow the instructions.</p>
+<p><img src="img/netlify-change-sitename.PNG" width="120%" /></p>
+<p>Click on your name to get back to <code>Sites</code> and then click on the name of your website to view it.</p>
+<p>Congratulations, you’ve created and deployed a website.</p>
+<p>Next, we’ll go back into R to learn how to change the content.</p>
 
+</div>
 </div>
             </section>
 
