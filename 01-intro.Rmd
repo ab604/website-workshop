@@ -26,3 +26,8 @@ This is not the only way to do things, but it's what I'm familiar with and is
 free.
 
 See [the publications section][Creating publication files] for the full details.
+
+## Other files
+
+If you want to build Bibi the Cat's website you'll need 
+<a href="https:ab604.github.io/docs/bibi-files.zip" download>these files</a>.

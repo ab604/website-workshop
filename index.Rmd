@@ -35,6 +35,8 @@ knitr::write_bib(c(
 
 options(knitr.graphics.auto_pdf = TRUE)
 
+# Turn off code evaluation as default
+knitr::opts_chunk$set(eval = FALSE)
 ```
 
 # Summary {-}

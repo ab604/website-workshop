@@ -102,13 +102,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>1</b> Getting started</a><ul>
 <li class="chapter" data-level="1.1" data-path="getting-started.html"><a href="getting-started.html#installation"><i class="fa fa-check"></i><b>1.1</b> Installation</a></li>
 <li class="chapter" data-level="1.2" data-path="getting-started.html"><a href="getting-started.html#installing-jabref"><i class="fa fa-check"></i><b>1.2</b> Installing JabRef</a></li>
+<li class="chapter" data-level="1.3" data-path="getting-started.html"><a href="getting-started.html#other-files"><i class="fa fa-check"></i><b>1.3</b> Other files</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="creating-and-deploying-an-initial-website.html"><a href="creating-and-deploying-an-initial-website.html"><i class="fa fa-check"></i><b>2</b> Creating and deploying an initial website</a><ul>
 <li class="chapter" data-level="2.1" data-path="creating-and-deploying-an-initial-website.html"><a href="creating-and-deploying-an-initial-website.html#creating-a-website-in-r"><i class="fa fa-check"></i><b>2.1</b> Creating a website in R</a></li>
 <li class="chapter" data-level="2.2" data-path="creating-and-deploying-an-initial-website.html"><a href="creating-and-deploying-an-initial-website.html#deployment"><i class="fa fa-check"></i><b>2.2</b> Deployment</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html"><i class="fa fa-check"></i><b>3</b> Adding content to the site</a></li>
-<li class="chapter" data-level="4" data-path="creating-publication-files.html"><a href="creating-publication-files.html"><i class="fa fa-check"></i><b>4</b> Creating publication files</a></li>
+<li class="chapter" data-level="3" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html"><i class="fa fa-check"></i><b>3</b> Adding content to the site</a><ul>
+<li class="chapter" data-level="3.1" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html#the-file-structure-in-r"><i class="fa fa-check"></i><b>3.1</b> The file structure in R</a></li>
+<li class="chapter" data-level="3.2" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html#configuration"><i class="fa fa-check"></i><b>3.2</b> Configuration</a></li>
+<li class="chapter" data-level="3.3" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html#choosing-sections-and-editing-the-biography"><i class="fa fa-check"></i><b>3.3</b> Choosing sections and editing the biography</a></li>
+<li class="chapter" data-level="3.4" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html#editing-section-content"><i class="fa fa-check"></i><b>3.4</b> Editing section content</a></li>
+<li class="chapter" data-level="3.5" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html#creating-projects-content"><i class="fa fa-check"></i><b>3.5</b> Creating Projects content</a></li>
+<li class="chapter" data-level="3.6" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html#troubleshooting"><i class="fa fa-check"></i><b>3.6</b> Troubleshooting</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="creating-publication-files.html"><a href="creating-publication-files.html"><i class="fa fa-check"></i><b>4</b> Creating publication files</a><ul>
+<li class="chapter" data-level="4.1" data-path="creating-publication-files.html"><a href="creating-publication-files.html#citation-format"><i class="fa fa-check"></i><b>4.1</b> Citation format</a></li>
+<li class="chapter" data-level="4.2" data-path="creating-publication-files.html"><a href="creating-publication-files.html#converting-bibtex-files"><i class="fa fa-check"></i><b>4.2</b> Converting Bibtex files</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="automating-deployment-with-github.html"><a href="automating-deployment-with-github.html"><i class="fa fa-check"></i><b>5</b> Automating deployment with GitHub</a></li>
 </ul>
 
@@ -152,12 +163,7 @@ Figure 2.2: Create a new directory with a suitable name with no spaces and choos
 </p>
 </div>
 <p>Then <code>Create Project</code> and it should download the necessary files, change the working directory to the one created and you should see something like this:</p>
-<div class="figure"><span id="fig:rstudio-web"></span>
-<img src="img/initial-site.PNG" alt="(ref:rstudio-web)" width="120%" />
-<p class="caption">
-Figure 2.3: (ref:rstudio-web)
-</p>
-</div>
+<p><img src="img/initial-site.PNG" width="120%" /></p>
 <p>There are a bunch of folders and files, and the script editor pane is open with the <code>confog.toml</code> file open for editing.</p>
 <p>As example files are provided we can build a website immediately using:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">blogdown<span class="op">::</span><span class="kw">serve_site</span>()</code></pre></div>

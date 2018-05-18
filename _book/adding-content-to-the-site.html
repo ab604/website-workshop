@@ -102,13 +102,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>1</b> Getting started</a><ul>
 <li class="chapter" data-level="1.1" data-path="getting-started.html"><a href="getting-started.html#installation"><i class="fa fa-check"></i><b>1.1</b> Installation</a></li>
 <li class="chapter" data-level="1.2" data-path="getting-started.html"><a href="getting-started.html#installing-jabref"><i class="fa fa-check"></i><b>1.2</b> Installing JabRef</a></li>
+<li class="chapter" data-level="1.3" data-path="getting-started.html"><a href="getting-started.html#other-files"><i class="fa fa-check"></i><b>1.3</b> Other files</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="creating-and-deploying-an-initial-website.html"><a href="creating-and-deploying-an-initial-website.html"><i class="fa fa-check"></i><b>2</b> Creating and deploying an initial website</a><ul>
 <li class="chapter" data-level="2.1" data-path="creating-and-deploying-an-initial-website.html"><a href="creating-and-deploying-an-initial-website.html#creating-a-website-in-r"><i class="fa fa-check"></i><b>2.1</b> Creating a website in R</a></li>
 <li class="chapter" data-level="2.2" data-path="creating-and-deploying-an-initial-website.html"><a href="creating-and-deploying-an-initial-website.html#deployment"><i class="fa fa-check"></i><b>2.2</b> Deployment</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html"><i class="fa fa-check"></i><b>3</b> Adding content to the site</a></li>
-<li class="chapter" data-level="4" data-path="creating-publication-files.html"><a href="creating-publication-files.html"><i class="fa fa-check"></i><b>4</b> Creating publication files</a></li>
+<li class="chapter" data-level="3" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html"><i class="fa fa-check"></i><b>3</b> Adding content to the site</a><ul>
+<li class="chapter" data-level="3.1" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html#the-file-structure-in-r"><i class="fa fa-check"></i><b>3.1</b> The file structure in R</a></li>
+<li class="chapter" data-level="3.2" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html#configuration"><i class="fa fa-check"></i><b>3.2</b> Configuration</a></li>
+<li class="chapter" data-level="3.3" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html#choosing-sections-and-editing-the-biography"><i class="fa fa-check"></i><b>3.3</b> Choosing sections and editing the biography</a></li>
+<li class="chapter" data-level="3.4" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html#editing-section-content"><i class="fa fa-check"></i><b>3.4</b> Editing section content</a></li>
+<li class="chapter" data-level="3.5" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html#creating-projects-content"><i class="fa fa-check"></i><b>3.5</b> Creating Projects content</a></li>
+<li class="chapter" data-level="3.6" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html#troubleshooting"><i class="fa fa-check"></i><b>3.6</b> Troubleshooting</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="creating-publication-files.html"><a href="creating-publication-files.html"><i class="fa fa-check"></i><b>4</b> Creating publication files</a><ul>
+<li class="chapter" data-level="4.1" data-path="creating-publication-files.html"><a href="creating-publication-files.html#citation-format"><i class="fa fa-check"></i><b>4.1</b> Citation format</a></li>
+<li class="chapter" data-level="4.2" data-path="creating-publication-files.html"><a href="creating-publication-files.html#converting-bibtex-files"><i class="fa fa-check"></i><b>4.2</b> Converting Bibtex files</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="automating-deployment-with-github.html"><a href="automating-deployment-with-github.html"><i class="fa fa-check"></i><b>5</b> Automating deployment with GitHub</a></li>
 </ul>
 
@@ -129,7 +140,206 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="adding-content-to-the-site" class="section level1">
 <h1><span class="header-section-number">3</span> Adding content to the site</h1>
+<div id="the-file-structure-in-r" class="section level2">
+<h2><span class="header-section-number">3.1</span> The file structure in R</h2>
+<p>The folder containing the published website as we saw in the last chapter is the <code>public</code> folder.</p>
+<p>The <code>config.toml</code> file is where we set the global configurations for the site.</p>
+<p>For detail see the TOML syntax <a href="https://bookdown.org/yihui/blogdown/configuration.html">blogdown chapter</a>, but most of what we’re going to change is quite straightoforward, see <a href="adding-content-to-the-site.html#configuration">Configuration</a></p>
+<p>The <code>content</code> folder contains subdirectories containing the files that we create or edit for the sections on the website e.g. publications or project pages.</p>
+<p>Images and other files we might want (such a CV) go in the <code>static</code> folder and sub-folders respectively. These will then be copied to the <code>public</code> folder when we build the site.</p>
+<p>We don’t need to touch the other folders for the purposes of this tutorial, but as before the <a href="https://bookdown.org/yihui/blogdown">blogdown book</a> has all the details.</p>
+</div>
+<div id="configuration" class="section level2">
+<h2><span class="header-section-number">3.2</span> Configuration</h2>
+<p>Here we’ll configure the <code>config.toml</code> file.</p>
+<ol style="list-style-type: decimal">
+<li>First we’ll change the title:</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Title of your site</span>
+title =<span class="st"> &quot;Professor Bibi Cat&quot;</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Then we change the details:</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Your details.</span>
+  name =<span class="st"> &quot;Bibi the Cat&quot;</span>
+  role =<span class="st"> &quot;Professor of Chaos Theory and Practice&quot;</span>
+  
+  <span class="co"># Organizations/Affiliations.</span>
+  <span class="co">#   Separate multiple entries with a comma, using the form: </span>
+  <span class="co"># `[ {name=&quot;Org1&quot;, url=&quot;&quot;}, {name=&quot;Org2&quot;, url=&quot;&quot;} ]`.</span>
+  organizations =<span class="st"> </span>[ { name =<span class="st"> &quot;Feline University&quot;</span>, url =<span class="st"> &quot;&quot;</span> } ]</code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Next we change the avatar picture by copying an image to <code>static/img</code> and either calling it <code>potrait.jpg</code> or changing the name in the <code>config.toml</code> file. We’ll also change the other details, deleting anything we don’t want:</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  gravatar =<span class="st"> </span>false  <span class="co"># Get your avatar from Gravatar.com? (true/false)</span>
+  avatar =<span class="st"> &quot;portrait.jpg&quot;</span>  <span class="co"># Specify an avatar image (in `static/img/` folder) </span>
+                           <span class="co"># or delete value to disable avatar.</span>
+  email =<span class="st"> &quot;bibi@example.org&quot;</span>
+  address =<span class="st"> &quot;Red Fleecy Blanket, Southampton&quot;</span>
+  office_hours =<span class="st"> &quot;Whenever I&#39;m hungry&quot;</span>
+  phone =<span class="st"> &quot;&quot;</span>
+  skype =<span class="st"> &quot;&quot;</span>
+  telegram =<span class="st"> &quot;&quot;</span></code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li>Then we’ll change the social media icons to include ORCID, this uses the <code>ai</code> icon pack, rather than the <code>fa</code> icon pack:</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">[[params.social]]
+    icon =<span class="st"> &quot;orcid&quot;</span>
+    icon_pack =<span class="st"> &quot;ai&quot;</span>
+    link =<span class="st"> &quot;https://orcid.org/0000-000X-XXXX-XXXX&quot;</span>
 
+  [[params.social]]
+    icon =<span class="st"> &quot;twitter&quot;</span>
+    icon_pack =<span class="st"> &quot;fa&quot;</span>
+    link =<span class="st"> &quot;//twitter.com/bibi-the-cat&quot;</span></code></pre></div>
+<ol start="5" style="list-style-type: decimal">
+<li>We can add, move or remove links that appear on the homepage of the website. Bibi is too busy sleeping to write blog posts or do any teaching, but she would like to promote her CV which we’ll add to the <code>static/files</code> folder:</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">[[menu.main]]
+  name =<span class="st"> &quot;Home&quot;</span>
+  url =<span class="st"> &quot;#about&quot;</span>
+  weight =<span class="st"> </span><span class="dv">1</span>
+
+[[menu.main]]
+  name =<span class="st"> &quot;Publications&quot;</span>
+  url =<span class="st"> &quot;#publications&quot;</span>
+  weight =<span class="st"> </span><span class="dv">2</span>
+
+[[menu.main]]
+  name =<span class="st"> &quot;CV&quot;</span>
+  url =<span class="st"> &quot;/files/cv.pdf&quot;</span>
+  weight =<span class="st"> </span><span class="dv">3</span>
+
+[[menu.main]]
+  name =<span class="st"> &quot;Projects&quot;</span>
+  url =<span class="st"> &quot;#projects&quot;</span>
+  weight =<span class="st"> </span><span class="dv">4</span>
+
+
+[[menu.main]]
+  name =<span class="st"> &quot;Contact&quot;</span>
+  url =<span class="st"> &quot;#contact&quot;</span>
+  weight =<span class="st"> </span><span class="dv">6</span></code></pre></div>
+<p>Explore to find out what else you can change, such as the publication format.</p>
+</div>
+<div id="choosing-sections-and-editing-the-biography" class="section level2">
+<h2><span class="header-section-number">3.3</span> Choosing sections and editing the biography</h2>
+<p>In the <code>content/home</code> folder are a series of files which configure the sections widgets.</p>
+<p>To turn a section off, open the relevant file and change <code>active = true</code> to <code>active = false</code>.</p>
+<p>For example, Bibi is far too busy sleeping to do any teaching, so we’ll turn of the teaching widget by opening <code>teaching.md</code> and changing the <code>active</code> status.</p>
+<p><img src="img/turn-off-widget.PNG" width="120%" /></p>
+<p>Let’s do this for <code>hero</code>, <code>publications_selected</code>, <code>posts</code>,<code>talks</code> and <code>teaching</code>.</p>
+<p>And now look at the updated site. <code>hero</code> controlled the top banner, and <code>publications</code> is where the link on our menu bar links to.</p>
+</div>
+<div id="editing-section-content" class="section level2">
+<h2><span class="header-section-number">3.4</span> Editing section content</h2>
+<p>The template files in <code>content/home</code> are written in markdown, lightweight markup language, where for example <code>#</code> indicates Heading 1 and <code>##</code> Heading 2. See the <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">markdown cheatsheet</a> to quickly understand the syntax.</p>
+<p>You can also write Rmarkdown files here, we’re not going to, but see <a href="https://bookdown.org/yihui/blogdown/output-format.html">here</a> for details.</p>
+<p>Starting with the <code>about</code> file, the bit between the <code>+++</code> symbols is for the <code>about</code> widget that creates the interests and education bit on the homepage.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">+++</span>
+<span class="co"># About/Biography widget.</span>
+widget =<span class="st"> &quot;about&quot;</span>
+active =<span class="st"> </span>true
+date =<span class="st"> </span><span class="dv">2016</span><span class="op">-</span><span class="dv">04</span><span class="op">-</span>20T00<span class="op">:</span><span class="dv">00</span><span class="op">:</span><span class="dv">00</span>
+
+<span class="co"># Order that this section will appear in.</span>
+weight =<span class="st"> </span><span class="dv">5</span>
+
+<span class="co"># List your academic interests.</span>
+[interests]
+  interests =<span class="st"> </span>[
+    <span class="st">&quot;Sleeping&quot;</span>,
+    <span class="st">&quot;Cardboard boxes and bags&quot;</span>,
+    <span class="st">&quot;Dreamies&quot;</span>
+  ]
+
+<span class="co"># List your qualifications (such as academic degrees).</span>
+[[education.courses]]
+  course =<span class="st"> &quot;PhD in Causing Chaos&quot;</span>
+  institution =<span class="st"> &quot;University of Life&quot;</span>
+  year =<span class="st"> </span><span class="dv">2012</span>
+
+[[education.courses]]
+  course =<span class="st"> &quot;MEng in Cardboard Box Destruction&quot;</span>
+  institution =<span class="st"> &quot;University of Life&quot;</span>
+  year =<span class="st"> </span><span class="dv">2009</span>
+
+[[education.courses]]
+  course =<span class="st"> &quot;BSc in Covering Everything in Hair&quot;</span>
+  institution =<span class="st"> &quot;University of Life&quot;</span>
+  year =<span class="st"> </span><span class="dv">2008</span>
+ 
+<span class="op">+++</span>
+
+<span class="co"># Biography</span>
+
+Bibi the Cat is a Professor <span class="cf">in</span> Chaos Theory and Practice. <span class="dv">90</span>% of her time is
+spent snoozing, whilst she devotes the other <span class="dv">10</span>% to destroying things and 
+eating tasty treats. Don<span class="st">&#39;t call her, she&#39;</span>ll call you.</code></pre></div>
+</div>
+<div id="creating-projects-content" class="section level2">
+<h2><span class="header-section-number">3.5</span> Creating Projects content</h2>
+<p>Now if we go up to the <code>content</code> directory you’ll see we have folders for <code>projects</code> and <code>publication</code>.</p>
+<p>Let’s go into <code>content/project</code> and open <code>deep-learning.md</code> and edit it, starting with the widget section to change:</p>
+<ol style="list-style-type: decimal">
+<li>the date</li>
+<li>the title</li>
+<li>the summary</li>
+<li>the preview image to the one in <code>static/img</code></li>
+<li>the tags</li>
+<li>the header image also to ehe one in <code>static/img</code></li>
+</ol>
+<p>And then write whatever we want to about the project, below the <code>+++</code> , I’ve added some markdown for another image also in the <code>static/img/</code> folder so we have this:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> <span class="op">+++</span>
+<span class="co"># Date this page was created.</span>
+date =<span class="st"> </span><span class="dv">2018</span><span class="op">-</span><span class="dv">05</span><span class="op">-</span>17T00<span class="op">:</span><span class="dv">00</span><span class="op">:</span><span class="dv">00</span>
+
+<span class="co"># Project title.</span>
+title =<span class="st"> &quot;Bags&quot;</span>
+
+<span class="co"># Project summary to display on homepage.</span>
+summary =<span class="st"> &quot;Bibi loves to get into bags&quot;</span>
+
+<span class="co"># Optional image to display on homepage (relative to `static/img/` folder).</span>
+image_preview =<span class="st"> &quot;bibi-bag.jpg&quot;</span>
+
+<span class="co"># Tags: can be used for filtering projects.</span>
+<span class="co"># Example: `tags = [&quot;machine-learning&quot;, &quot;deep-learning&quot;]`</span>
+tags =<span class="st"> </span>[<span class="st">&quot;bags&quot;</span>]
+
+<span class="co"># Optional external URL for project (replaces project detail page).</span>
+external_link =<span class="st"> &quot;&quot;</span>
+
+<span class="co"># Does the project detail page use math formatting?</span>
+math =<span class="st"> </span>false
+
+<span class="co"># Optional featured image (relative to `static/img/` folder).</span>
+[header]
+image =<span class="st"> &quot;bibi-bag.jpg&quot;</span>
+caption =<span class="st"> &quot;Bibi in a bag&quot;</span>
+
+<span class="op">+++</span>
+
+I love bags, but also boxes. In fact anything I can get inside, especially
+<span class="cf">if</span> you don<span class="st">&#39;t want me to.</span>
+
+<span class="st">![Bibi in a box](/img/bibi-box.jpg)</span></code></pre></div>
+<p>I then save this as <code>bags.md</code> and delete the <code>deep-learning.md</code> file.</p>
+<p>I’ll leave you to explore the external link example, but it requires editing the widget as before for title, date and images, and then changing the link to your external webpage.</p>
+<p><img src="img/external-link-project.PNG" width="120%" /></p>
+<p>In the next chapter we’ll look at adding publications to the site.</p>
+</div>
+<div id="troubleshooting" class="section level2">
+<h2><span class="header-section-number">3.6</span> Troubleshooting</h2>
+<p>When you start changing things, you may find that the site stops automatically updating. This indicates an error.</p>
+<p>To find out what is wrong, go to the <code>Terminal</code> tab in Rstudio and type <code>hugo -v</code> and try to figure it out.</p>
+<p><img src="img/hugo-error.PNG" width="120%" /></p>
+<p>Here, I’ve removed <code>deep-learning.md</code> from the project folder, but the error indicated there are references to it in other files that I needed to amend.</p>
+<p>For the first error, I opened the <code>content/talk/</code> folder and in the <code>example-talk.md</code> file I see that line 19 has <code>projects = [&quot;deep-learnig&quot;]</code> . So I commented it out with a <code>#</code> symbol.</p>
+<p><img src="img/hugo-error2.PNG" width="120%" /></p>
+<p>Follow the same approach for all errors until when you run <code>hugo -v</code> there are no more, and the site should now build.</p>
+
+</div>
 </div>
             </section>
 

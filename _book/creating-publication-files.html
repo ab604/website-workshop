@@ -102,13 +102,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>1</b> Getting started</a><ul>
 <li class="chapter" data-level="1.1" data-path="getting-started.html"><a href="getting-started.html#installation"><i class="fa fa-check"></i><b>1.1</b> Installation</a></li>
 <li class="chapter" data-level="1.2" data-path="getting-started.html"><a href="getting-started.html#installing-jabref"><i class="fa fa-check"></i><b>1.2</b> Installing JabRef</a></li>
+<li class="chapter" data-level="1.3" data-path="getting-started.html"><a href="getting-started.html#other-files"><i class="fa fa-check"></i><b>1.3</b> Other files</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="creating-and-deploying-an-initial-website.html"><a href="creating-and-deploying-an-initial-website.html"><i class="fa fa-check"></i><b>2</b> Creating and deploying an initial website</a><ul>
 <li class="chapter" data-level="2.1" data-path="creating-and-deploying-an-initial-website.html"><a href="creating-and-deploying-an-initial-website.html#creating-a-website-in-r"><i class="fa fa-check"></i><b>2.1</b> Creating a website in R</a></li>
 <li class="chapter" data-level="2.2" data-path="creating-and-deploying-an-initial-website.html"><a href="creating-and-deploying-an-initial-website.html#deployment"><i class="fa fa-check"></i><b>2.2</b> Deployment</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html"><i class="fa fa-check"></i><b>3</b> Adding content to the site</a></li>
-<li class="chapter" data-level="4" data-path="creating-publication-files.html"><a href="creating-publication-files.html"><i class="fa fa-check"></i><b>4</b> Creating publication files</a></li>
+<li class="chapter" data-level="3" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html"><i class="fa fa-check"></i><b>3</b> Adding content to the site</a><ul>
+<li class="chapter" data-level="3.1" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html#the-file-structure-in-r"><i class="fa fa-check"></i><b>3.1</b> The file structure in R</a></li>
+<li class="chapter" data-level="3.2" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html#configuration"><i class="fa fa-check"></i><b>3.2</b> Configuration</a></li>
+<li class="chapter" data-level="3.3" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html#choosing-sections-and-editing-the-biography"><i class="fa fa-check"></i><b>3.3</b> Choosing sections and editing the biography</a></li>
+<li class="chapter" data-level="3.4" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html#editing-section-content"><i class="fa fa-check"></i><b>3.4</b> Editing section content</a></li>
+<li class="chapter" data-level="3.5" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html#creating-projects-content"><i class="fa fa-check"></i><b>3.5</b> Creating Projects content</a></li>
+<li class="chapter" data-level="3.6" data-path="adding-content-to-the-site.html"><a href="adding-content-to-the-site.html#troubleshooting"><i class="fa fa-check"></i><b>3.6</b> Troubleshooting</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="creating-publication-files.html"><a href="creating-publication-files.html"><i class="fa fa-check"></i><b>4</b> Creating publication files</a><ul>
+<li class="chapter" data-level="4.1" data-path="creating-publication-files.html"><a href="creating-publication-files.html#citation-format"><i class="fa fa-check"></i><b>4.1</b> Citation format</a></li>
+<li class="chapter" data-level="4.2" data-path="creating-publication-files.html"><a href="creating-publication-files.html#converting-bibtex-files"><i class="fa fa-check"></i><b>4.2</b> Converting Bibtex files</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="automating-deployment-with-github.html"><a href="automating-deployment-with-github.html"><i class="fa fa-check"></i><b>5</b> Automating deployment with GitHub</a></li>
 </ul>
 
@@ -129,7 +140,233 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="creating-publication-files" class="section level1">
 <h1><span class="header-section-number">4</span> Creating publication files</h1>
+<p>This is probably the most fiddly part. In the <code>content/publication</code> folder we need <code>.md</code> files for each publication we want to add to our site.</p>
+<p>Bibi being quite a lazy cat only has one publication, but we’ll look at how to automate the process for many.</p>
+<div id="citation-format" class="section level2">
+<h2><span class="header-section-number">4.1</span> Citation format</h2>
+<p>To add publication citations, we first need them in <code>bibtex</code> format. This can be done using <a href="http://www.jabref.org/">JabRef</a>.</p>
+<ol style="list-style-type: decimal">
+<li>Open JabRef and go to <code>Options &gt; Preferences &gt; General</code> and ensure <code>Default encoding</code> is set to <code>UTF-8</code></li>
+</ol>
+<p><img src="img/jabref_general_settings.PNG" width="120%" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Then go to <code>Options &gt; Preferences &gt; Bibtex key generator</code> and set this to <code>[auth:lower][year]</code> and then <code>OK</code>.</li>
+</ol>
+<p><img src="img/jabref_bibtex_key.PNG" width="120%" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Then create a library <code>File &gt; New Bibtex Library</code>.</p></li>
+<li><p>If you have exported your publications from EndNote or other software as bibtex you can import this into your new library and then highlight the list and click on the key icon to generate bibtex keys.</p></li>
+<li><p>Alternatively, we can generate the list using the search function, here I entered a DOI and searched with Google Scholar:</p></li>
+</ol>
+<p><img src="img/jabref_websearch.PNG" width="120%" /></p>
+<p>Then I selected the publication and generated the key.</p>
+<p><img src="img/jabref_websearch_2.PNG" width="120%" /></p>
+<ol start="6" style="list-style-type: decimal">
+<li>Now we save the bibtex library. Here it is <code>cats.bib</code>. It’s just another text file so can be viewed in any text editor.</li>
+</ol>
+</div>
+<div id="converting-bibtex-files" class="section level2">
+<h2><span class="header-section-number">4.2</span> Converting Bibtex files</h2>
+<p>Converting to markdown requires some effort, fortunately <a href="https://lbusett.netlify.com/post/automatically-importing-publications-from-bibtex-to-a-hugo-academic-blog/">Lorenzo Buesetto</a> wrote a function that required a small hack to work with JabRef.</p>
+<p>I found the function still may output files that need a bit of cleaning up, but generally it works really well.</p>
+<p>We need the <code>tidyverse, RefManageR, anytime</code> packages installed.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bibtex_2academic &lt;-<span class="st"> </span><span class="cf">function</span>(bibfile,
+                             outfold,
+                             <span class="dt">abstract =</span> <span class="ot">FALSE</span>,
+                             <span class="dt">overwrite =</span> <span class="ot">FALSE</span>) {
+                             <span class="kw">require</span>(RefManageR)
+                             <span class="kw">require</span>(dplyr)
+                             <span class="kw">require</span>(stringr)
+                             <span class="kw">require</span>(anytime)
+                             
+                             <span class="co"># Import the bibtex file and convert to data.frame</span>
+                             mypubs   &lt;-
+<span class="st">                             </span><span class="kw">ReadBib</span>(bibfile, <span class="dt">check =</span> <span class="st">&quot;warn&quot;</span>, 
+                                     <span class="dt">.Encoding =</span> <span class="st">&quot;UTF-8&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">                             </span><span class="kw">as.data.frame</span>()
+                             
+                             <span class="co"># assign &quot;categories&quot; to the different types of</span>
+                             <span class="co"># publications</span>
+                             mypubs   &lt;-<span class="st"> </span>mypubs <span class="op">%&gt;%</span>
+<span class="st">                             </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(
+                             <span class="dt">pubtype =</span> dplyr<span class="op">::</span><span class="kw">case_when</span>(
+                             bibtype <span class="op">==</span><span class="st"> &quot;Article&quot;</span> <span class="op">~</span><span class="st"> &quot;2&quot;</span>,
+                             bibtype <span class="op">==</span><span class="st"> &quot;Article in Press&quot;</span> <span class="op">~</span><span class="st"> &quot;2&quot;</span>,
+                             bibtype <span class="op">==</span><span class="st"> &quot;InProceedings&quot;</span> <span class="op">~</span><span class="st"> &quot;1&quot;</span>,
+                             bibtype <span class="op">==</span><span class="st"> &quot;Proceedings&quot;</span> <span class="op">~</span><span class="st"> &quot;1&quot;</span>,
+                             bibtype <span class="op">==</span><span class="st"> &quot;Conference&quot;</span> <span class="op">~</span><span class="st"> &quot;1&quot;</span>,
+                             bibtype <span class="op">==</span><span class="st"> &quot;Conference Paper&quot;</span> <span class="op">~</span><span class="st"> &quot;1&quot;</span>,
+                             bibtype <span class="op">==</span><span class="st"> &quot;MastersThesis&quot;</span> <span class="op">~</span><span class="st"> &quot;3&quot;</span>,
+                             bibtype <span class="op">==</span><span class="st"> &quot;PhdThesis&quot;</span> <span class="op">~</span><span class="st"> &quot;3&quot;</span>,
+                             bibtype <span class="op">==</span><span class="st"> &quot;Manual&quot;</span> <span class="op">~</span><span class="st"> &quot;4&quot;</span>,
+                             bibtype <span class="op">==</span><span class="st"> &quot;TechReport&quot;</span> <span class="op">~</span><span class="st"> &quot;4&quot;</span>,
+                             bibtype <span class="op">==</span><span class="st"> &quot;Book&quot;</span> <span class="op">~</span><span class="st"> &quot;5&quot;</span>,
+                             bibtype <span class="op">==</span><span class="st"> &quot;InCollection&quot;</span> <span class="op">~</span><span class="st"> &quot;6&quot;</span>,
+                             bibtype <span class="op">==</span><span class="st"> &quot;InBook&quot;</span> <span class="op">~</span><span class="st"> &quot;6&quot;</span>,
+                             bibtype <span class="op">==</span><span class="st"> &quot;Misc&quot;</span> <span class="op">~</span><span class="st"> &quot;0&quot;</span>,
+                             <span class="ot">TRUE</span> <span class="op">~</span><span class="st"> &quot;0&quot;</span>
+                             )
+                             )
+                             
+                             <span class="co"># create a function which populates the md template </span>
+                             <span class="co"># based on the info</span>
+                             <span class="co"># about a publication</span>
+                             create_md &lt;-<span class="st"> </span><span class="cf">function</span>(x) {
+                             <span class="co"># define a date and create filename by appending date </span>
+                             <span class="co"># and start of title</span>
+                             <span class="cf">if</span> (<span class="op">!</span><span class="kw">is.na</span>(x[[<span class="st">&quot;year&quot;</span>]])) {
+                             x[[<span class="st">&quot;date&quot;</span>]] &lt;-<span class="st"> </span><span class="kw">paste0</span>(x[[<span class="st">&quot;year&quot;</span>]], <span class="st">&quot;-01-01&quot;</span>)
+                             } <span class="cf">else</span> {
+                             x[[<span class="st">&quot;date&quot;</span>]] &lt;-<span class="st"> &quot;2999-01-01&quot;</span>
+                             }
+                             
+                             filename &lt;-<span class="st"> </span><span class="kw">paste</span>(
+                             x[[<span class="st">&quot;date&quot;</span>]],
+                             x[[<span class="st">&quot;title&quot;</span>]] <span class="op">%&gt;%</span>
+<span class="st">                             </span><span class="kw">str_replace_all</span>(<span class="kw">fixed</span>(<span class="st">&quot; &quot;</span>), <span class="st">&quot;_&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">                             </span><span class="kw">str_remove_all</span>(<span class="kw">fixed</span>(<span class="st">&quot;:&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">                             </span><span class="kw">str_sub</span>(<span class="dv">1</span>, <span class="dv">20</span>) <span class="op">%&gt;%</span>
+<span class="st">                             </span><span class="kw">paste0</span>(<span class="st">&quot;.md&quot;</span>),
+                             <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>
+                             )
+                             <span class="co"># start writing</span>
+                             <span class="cf">if</span> (<span class="op">!</span><span class="kw">file.exists</span>(<span class="kw">file.path</span>(outfold, filename)) <span class="op">|</span>
+<span class="st">                             </span>overwrite) {
+                             fileConn &lt;-<span class="st"> </span><span class="kw">file.path</span>(outfold, filename)
+                             <span class="kw">write</span>(<span class="st">&quot;+++&quot;</span>, fileConn)
+                             
+                             <span class="co"># Title and date</span>
+                             <span class="kw">write</span>(<span class="kw">paste0</span>(<span class="st">&quot;title = </span><span class="ch">\&quot;</span><span class="st">&quot;</span>, x[[<span class="st">&quot;title&quot;</span>]], <span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">&quot;</span>),
+                             fileConn,
+                             <span class="dt">append =</span> T)
+                             <span class="kw">write</span>(<span class="kw">paste0</span>(<span class="st">&quot;date = </span><span class="ch">\&quot;</span><span class="st">&quot;</span>, <span class="kw">anydate</span>(x[[<span class="st">&quot;date&quot;</span>]]), <span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">&quot;</span>),
+                             fileConn,
+                             <span class="dt">append =</span> T)
+                             
+                             <span class="co"># Authors. Comma separated list, e.g. `[&quot;Bob Smith&quot;, </span>
+                             <span class="co"># &quot;David Jones&quot;]`.</span>
+                             auth_hugo &lt;-
+<span class="st">                             </span><span class="kw">str_replace_all</span>(x[<span class="st">&quot;author&quot;</span>], <span class="st">&quot; and &quot;</span>, <span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">, </span><span class="ch">\&quot;</span><span class="st">&quot;</span>)
+                             auth_hugo &lt;-
+<span class="st">                             </span>stringi<span class="op">::</span><span class="kw">stri_trans_general</span>(auth_hugo, <span class="st">&quot;latin-ascii&quot;</span>)
+                             <span class="kw">write</span>(<span class="kw">paste0</span>(<span class="st">&quot;authors = [</span><span class="ch">\&quot;</span><span class="st">&quot;</span>, auth_hugo, <span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">]&quot;</span>),
+                             fileConn,
+                             <span class="dt">append =</span> T)
+                             
+                             <span class="co"># Publication type. Legend:</span>
+                             <span class="co"># 0 = Uncategorized, 1 = Conference paper, </span>
+                             <span class="co"># 2 = Journal article</span>
+                             <span class="co"># 3 = Manuscript, 4 = Report, 5 = Book,  6 = Book</span>
+                             <span class="co"># section</span>
+                             <span class="kw">write</span>(<span class="kw">paste0</span>(<span class="st">&quot;publication_types = [</span><span class="ch">\&quot;</span><span class="st">&quot;</span>, x[[<span class="st">&quot;pubtype&quot;</span>]],
+                                          <span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">]&quot;</span>),
+                             fileConn,
+                             <span class="dt">append =</span> T)
+                             
+                             <span class="co"># Publication details: journal, volume, issue, </span>
+                             <span class="co"># page numbers and doi link</span>
+                             publication &lt;-<span class="st"> </span>x[[<span class="st">&quot;journal&quot;</span>]]
+                             <span class="cf">if</span> (<span class="op">!</span><span class="kw">is.na</span>(x[[<span class="st">&quot;volume&quot;</span>]]))
+                             publication &lt;-<span class="st"> </span><span class="kw">paste0</span>(publication,
+                             <span class="st">&quot;, (&quot;</span>, x[[<span class="st">&quot;volume&quot;</span>]], <span class="st">&quot;)&quot;</span>)
+                             <span class="cf">if</span> (<span class="op">!</span><span class="kw">is.na</span>(x[[<span class="st">&quot;pages&quot;</span>]]))
+                             publication &lt;-<span class="st"> </span><span class="kw">paste0</span>(publication,
+                             <span class="st">&quot;, _pp. &quot;</span>, x[[<span class="st">&quot;pages&quot;</span>]], <span class="st">&quot;_&quot;</span>)
+                             <span class="cf">if</span> (<span class="op">!</span><span class="kw">is.na</span>(x[[<span class="st">&quot;doi&quot;</span>]]))
+                             publication &lt;-<span class="st"> </span><span class="kw">paste0</span>(publication,
+                             <span class="st">&quot;, &quot;</span>,
+                             <span class="kw">paste0</span>(<span class="st">&quot;https://doi.org/&quot;</span>,
+                             x[[<span class="st">&quot;doi&quot;</span>]]))
+                             
+                             <span class="kw">write</span>(<span class="kw">paste0</span>(<span class="st">&quot;publication = </span><span class="ch">\&quot;</span><span class="st">&quot;</span>, publication, <span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">&quot;</span>),
+                             fileConn,
+                             <span class="dt">append =</span> T)
+                             <span class="kw">write</span>(<span class="kw">paste0</span>(<span class="st">&quot;publication_short = </span><span class="ch">\&quot;</span><span class="st">&quot;</span>,
+                             publication,
+                             <span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">&quot;</span>),
+                             fileConn,
+                             <span class="dt">append =</span> T)
+                             
+                             <span class="co"># Abstract and optional shortened version.</span>
+                             <span class="cf">if</span> (abstract) {
+                             <span class="kw">write</span>(<span class="kw">paste0</span>(<span class="st">&quot;abstract = </span><span class="ch">\&quot;</span><span class="st">&quot;</span>, x[[<span class="st">&quot;abstract&quot;</span>]], <span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">&quot;</span>),
+                             fileConn,
+                             <span class="dt">append =</span> T)
+                             } <span class="cf">else</span> {
+                             <span class="kw">write</span>(<span class="st">&quot;abstract = </span><span class="ch">\&quot;\&quot;</span><span class="st">&quot;</span>,
+                             fileConn,
+                             <span class="dt">append =</span> T)
+                             }
+                             <span class="kw">write</span>(<span class="kw">paste0</span>(<span class="st">&quot;abstract_short = </span><span class="ch">\&quot;</span><span class="st">&quot;</span>, <span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">&quot;</span>),
+                             fileConn,
+                             <span class="dt">append =</span> T)
+                             
+                             <span class="co"># other possible fields are kept empty. They can be</span>
+                             <span class="co"># customized later by</span>
+                             <span class="co"># editing the created md</span>
+                             
+                             <span class="kw">write</span>(<span class="st">&quot;image_preview = </span><span class="ch">\&quot;\&quot;</span><span class="st">&quot;</span>,
+                             fileConn,
+                             <span class="dt">append =</span> T)
+                             <span class="kw">write</span>(<span class="st">&quot;selected = false&quot;</span>, fileConn, <span class="dt">append =</span> T)
+                             <span class="kw">write</span>(<span class="st">&quot;projects = []&quot;</span>, fileConn, <span class="dt">append =</span> T)
+                             <span class="kw">write</span>(<span class="st">&quot;tags = []&quot;</span>, fileConn, <span class="dt">append =</span> T)
+                             <span class="co">#links</span>
+                             <span class="kw">write</span>(<span class="st">&quot;url_pdf = </span><span class="ch">\&quot;\&quot;</span><span class="st">&quot;</span>, fileConn, <span class="dt">append =</span> T)
+                             <span class="kw">write</span>(<span class="st">&quot;url_preprint = </span><span class="ch">\&quot;\&quot;</span><span class="st">&quot;</span>,
+                             fileConn,
+                             <span class="dt">append =</span> T)
+                             <span class="kw">write</span>(<span class="st">&quot;url_code = </span><span class="ch">\&quot;\&quot;</span><span class="st">&quot;</span>, fileConn, <span class="dt">append =</span> T)
+                             <span class="kw">write</span>(<span class="st">&quot;url_dataset = </span><span class="ch">\&quot;\&quot;</span><span class="st">&quot;</span>,
+                             fileConn,
+                             <span class="dt">append =</span> T)
+                             <span class="kw">write</span>(<span class="st">&quot;url_project = </span><span class="ch">\&quot;\&quot;</span><span class="st">&quot;</span>,
+                             fileConn,
+                             <span class="dt">append =</span> T)
+                             <span class="kw">write</span>(<span class="st">&quot;url_slides = </span><span class="ch">\&quot;\&quot;</span><span class="st">&quot;</span>, fileConn, <span class="dt">append =</span> T)
+                             <span class="kw">write</span>(<span class="st">&quot;url_video = </span><span class="ch">\&quot;\&quot;</span><span class="st">&quot;</span>, fileConn, <span class="dt">append =</span> T)
+                             <span class="kw">write</span>(<span class="st">&quot;url_poster = </span><span class="ch">\&quot;\&quot;</span><span class="st">&quot;</span>, fileConn, <span class="dt">append =</span> T)
+                             <span class="kw">write</span>(<span class="st">&quot;url_source = </span><span class="ch">\&quot;\&quot;</span><span class="st">&quot;</span>, fileConn, <span class="dt">append =</span> T)
+                             <span class="co">#other stuff</span>
+                             <span class="kw">write</span>(<span class="st">&quot;math = true&quot;</span>, fileConn, <span class="dt">append =</span> T)
+                             <span class="kw">write</span>(<span class="st">&quot;highlight = true&quot;</span>, fileConn, <span class="dt">append =</span> T)
+                             <span class="co"># Featured image</span>
+                             <span class="kw">write</span>(<span class="st">&quot;[header]&quot;</span>, fileConn, <span class="dt">append =</span> T)
+                             <span class="kw">write</span>(<span class="st">&quot;image = </span><span class="ch">\&quot;\&quot;</span><span class="st">&quot;</span>, fileConn, <span class="dt">append =</span> T)
+                             <span class="kw">write</span>(<span class="st">&quot;caption = </span><span class="ch">\&quot;\&quot;</span><span class="st">&quot;</span>, fileConn, <span class="dt">append =</span> T)
+                             
+                             <span class="kw">write</span>(<span class="st">&quot;+++&quot;</span>, fileConn, <span class="dt">append =</span> T)
+                             }
+                             }
+                             <span class="co"># apply the &quot;create_md&quot; function over the </span>
+                             <span class="co"># publications list to generate</span>
+                             <span class="co"># the different &quot;md&quot; files.</span>
+                             
+                             <span class="kw">apply</span>(
+                             mypubs,
+                             <span class="dt">FUN =</span> <span class="cf">function</span>(x)
+                             <span class="kw">create_md</span>(x),
+                             <span class="dt">MARGIN =</span> <span class="dv">1</span>
+                             )
+                             }</code></pre></div>
+<p>To use this function, save it as <code>bibtex_2academic.R</code> and then load the fcuntion into your R environment using <code>source(&quot;bibtex_2academic.R&quot;)</code>.</p>
+<p>Then assuming you have a JabRef outputted Bixbtex file, here <code>cats.bib</code> we need to assign variables for the bibtex file and the output location, which in this case will be <code>content/publication</code>. Then we use these variables as arguement to the conversion function:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Bibtex file in my directory</span>
+my_bibfile &lt;-<span class="st"> &quot;cats.bib&quot;</span>
+<span class="co"># Where I want the markdown output to go</span>
+outfold &lt;-<span class="st"> &quot;content/publication&quot;</span>
+<span class="co"># Use the conversion function</span>
+bibtex_2academic &lt;-<span class="st"> </span><span class="cf">function</span>(my_bibfile,
+                             outfold,
+                             <span class="dt">abstract =</span> <span class="ot">FALSE</span>,
+                             <span class="dt">overwrite =</span> <span class="ot">FALSE</span>
+                             )</code></pre></div>
+<p>All being well, we should now have a markdown file for each publication (we only had one in this example) in the <code>content/publication</code>. It may need some manual tweaking if the format on the webpage isn’t quite right.</p>
+<p>We can remove the example files that came with the template.</p>
+<p>Bibi should now have her website configured and what’s left is to re-deploy the completed version which should look like this:</p>
+<p><img src="img/bibi-final-site.PNG" width="120%" /></p>
 
+</div>
 </div>
             </section>
 

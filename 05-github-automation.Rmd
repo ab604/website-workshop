@@ -1,1 +1,14 @@
 # Automating deployment with GitHub
+
+In [Chapter 2][Deployment] we used drag and drop of the public folder, 
+but if you are familiar with version control (and if you aren't it's definitely 
+worth learning), then you can automate deployment using [GitHub](https://github.com).
+
+The details are in the [blogdown book](https://bookdown.org/yihui/blogdown/netlify.html), but essentially you 
+can link netlify to your GitHub account and deploy to netlify from there. This 
+means that anytime you update your site in Rstudio, you can push your files
+to GitHub and your site will be deployed automatically.
+
+Basically, this means you are tracking your changes and deploying in one step,
+which is both quicker and means it's easy to revert should you need to.
+
